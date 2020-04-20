@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Chart from './ChartWrapper'
 
 import './App.scss';
 
 function App() {
-  // This is where data loading is done.
+  useEffect(() => {
+    // This is where data loading and cleaning is done.
+  }, [])
   
+  if (!data) return <div>Loading...</div>
   return (
     <main className="app">
-      <Chart />
+      <Chart data={data} />
     </main>
   );
 }

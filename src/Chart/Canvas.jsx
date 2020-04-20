@@ -4,7 +4,7 @@ import ChartComponent from './Chart'
 
 import { useWindowDimensions } from '../store'
 
-const BarChart = (props: Props) => {
+const Canvas = (props: Props) => {
   const window = useWindowDimensions()
   const chartRef= useRef()
   const [dimensions, setDimensions] = useState({ width: 0, height: props.height })
@@ -21,6 +21,8 @@ const BarChart = (props: Props) => {
     }
   }, [window.width])
 
+  const width = dimensions?.width || props.width
+  const height = dimensions?.height || props.height
   return (
     <div
       ref={chartRef}
@@ -28,14 +30,15 @@ const BarChart = (props: Props) => {
       style={{ height: `100%`, width: '100%' }}>
       {/* basic responsiveness pattern for svg's => you can force dimensions consistency by setting it to a specific px value (from props or local state) or allow it to vary by setting it to 100% */}
       <svg
-        viewBox={`0 0 ${dimensions.width} ${dimensions.height || props.height}`}
+        id="canvas"
+        viewBox={`0 0 ${width} ${height}`}
         height='100%'
         width='100%'
       >
-        <ChartComponent data={props.data} width={dimensions.width} height={dimensions.height || props.height} />
+        <ChartComponent data={data} width={width} height={height} />
       </svg>
     </div>
   )
 }
 
-export default BarChart
+export default Canvas

@@ -8,7 +8,7 @@ const ChartWrapper = ({ data }) => {
 
   useLayoutEffect(() => {
     // Set the chart dimensions based on the dimensions on page load if you need to.
-    if (wrapperRef?.current) {
+    if (wrapperRef.current) {
       setDimensions({
         height: wrapperRef.current.offsetHeight,
         width: wrapperRef.current.offsetWidth
@@ -18,7 +18,7 @@ const ChartWrapper = ({ data }) => {
 
   return (
     <div ref={wrapperRef} className="chart" >
-     <Chart height={dimensions?.height || 0} width={dimensions?.width || 0} />
+      {dimensions ? <Chart height={dimensions.height} width={dimensions.width} data={data} /> : <div>Loading...</div>}
     </div>
   )
 }
