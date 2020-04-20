@@ -1,7 +1,6 @@
 // https://hackernoon.com/simplifying-responsive-layouts-with-react-hooks-19db73893a7a
 
-import React, { useState, useEffect, useContext, ReactNode } from 'react'
-import { ProfileData } from './models'
+import React, { useState, useEffect, useContext } from 'react'
 
 export const store = React.createContext({})
 const { Provider } = store

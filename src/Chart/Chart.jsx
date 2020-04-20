@@ -6,14 +6,13 @@ import * as d3 from 'd3'
 const Chart = (props: Props) => {
   const chartRef = useRef(null)
 
-  // Set margins
   useEffect(() => {
     // Setup: constants, axes, initial load. If they can change, save them to useState to be used in another useEffect dealing with those changes
     if (props.data && props.width && props.height) {
        const viz = d3.select(chartRef.current)
-        .attr('height', height)
-        .attr('width', width)
-        .attr('transform', `translate(${}, ${})`) // set margins.
+        .attr('height', props.height)
+        .attr('width', props.width)
+        // .attr('transform', `translate(${}, ${})`) // set margins.
 
     }
   }, [props.data, props.width, props.height])
