@@ -1,7 +1,7 @@
 .app {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // a max-width value is wise
+  width: 70vw;
+  height: auto; // or a specific value, depends on how you set the dimensions in the dimensions listener
+  overflow: hidden;
+  
 }

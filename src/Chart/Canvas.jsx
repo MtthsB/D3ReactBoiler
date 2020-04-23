@@ -24,6 +24,7 @@ const Canvas = (props: Props) => {
   const width = dimensions?.width || props.width
   const height = dimensions?.height || props.height
   return (
+    <>
     <div
       ref={chartRef}
       className="chart__area"
@@ -36,8 +37,11 @@ const Canvas = (props: Props) => {
         width='100%'
       >
         <ChartComponent data={data} width={width} height={height} />
+        {/* If you need something to be in the chart grid area, add is as a foreignObject*/}
       </svg>
     </div>
+    {/* Add anything that should be outside of the chart grid area */}
+    </>
   )
 }
 
