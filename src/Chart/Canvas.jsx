@@ -4,7 +4,7 @@ import ChartComponent from './Chart'
 
 import { useWindowDimensions } from '../store'
 
-const Canvas = (props: Props) => {
+const Canvas = (props) => {
   const window = useWindowDimensions()
   const chartRef= useRef()
   const [dimensions, setDimensions] = useState({ width: 0, height: props.height })
@@ -37,7 +37,7 @@ const Canvas = (props: Props) => {
         width='100%'
       >
         <ChartComponent data={data} width={width} height={height} />
-        {/* If you need something to be in the chart grid area, add is as a foreignObject*/}
+        {/* If you need something to be in the chart grid area, add it as a foreignObject*/}
       </svg>
     </div>
     {/* Add anything that should be outside of the chart grid area */}
